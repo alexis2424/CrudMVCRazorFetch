@@ -1,0 +1,70 @@
+﻿
+@{
+
+
+    ViewBag.Title = "Mercado de Frutas";
+}
+
+
+<h2>Mercado de Frutas</h2>
+<button class="btn btn-outline-success my-2 my-sm-0" onclick="document.location.href= '@Url.Content("~/Fruta/New")'" type="submit">Nuevo</button>
+<button class="btn btn-outline-success my-2 my-sm-0" onclick="Get()" type="submit">Refrescar </button>
+<br />
+<br />
+
+<div id="divLista" style="border:1px solid #000000">
+
+</div>
+
+
+<link type="text/css" href="~/Content/bootstrap-grid.min.css" rel="stylesheet" />
+<script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
+<body>
+
+    <div class="container"></div>
+
+</body>
+<script>
+
+    urlGet = "@Url.Content("~/Fruta/List")";
+    Get();
+    function Get() {
+
+        fetch(urlGet)
+            .then(function (response){
+                return response.text();
+            })
+            .then((data) => {
+                document.getElementById("divLista").innerHTML = data;
+        })
+    }
+
+    //Eliminar
+    function jsDelete(Id) {
+        fetch("@Url.Content("~/Fruta/Delete")", {
+            method: "POST",
+            body: JSON.stringify({
+                Id: Id
+
+            }),
+            headers: {
+                'Accept': "application/json",
+                "Content-Type": "application/json"
+
+            }
+        }).then(function (response) {
+            if (response.ok)
+                return response.text()
+            else
+                alert("Error al ejecutar :(")
+
+        }).then(function (Data) {
+            if (Data != "1") {
+                alert(Data)
+            } else {
+                Get();
+            }
+        })
+    }
+</script>

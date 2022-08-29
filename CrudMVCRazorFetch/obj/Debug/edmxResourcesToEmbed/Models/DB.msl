@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CrudMVCRazorFetchModelStoreContainer" CdmEntityContainer="CrudMVCRazorFetchEntities">
+    <EntitySetMapping Name="fruta">
+      <EntityTypeMapping TypeName="CrudMVCRazorFetchModel.fruta">
+        <MappingFragment StoreEntitySet="fruta">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="origen" ColumnName="origen" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

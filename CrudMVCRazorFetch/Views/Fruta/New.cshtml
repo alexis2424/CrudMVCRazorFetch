@@ -1,0 +1,73 @@
+﻿@model CrudMVCRazorFetch.Models.ViewModel.FrutaViewModel
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>Nueva Fruta</h2>
+
+<form>
+
+    <div class="row">
+
+        <div class="form-group">
+            @Html.LabelFor(d => d.Name)
+            @Html.TextBoxFor(d => d.Name, new { id = "Name" })
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(d => d.Cantidad)
+            @Html.TextBoxFor(d => d.Cantidad, new { id = "Cantidad" })
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(d => d.Origen)
+            @Html.TextBoxFor(d => d.Origen, new { id = "Origen" })
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(d => d.Precio)
+            @Html.TextBoxFor(d => d.Precio, new { id = "Precio" })
+
+        </div>
+            <button type="button" onclick="jsAdd()" class="btn btn-outline-success">Guardar</button>
+
+    </div>
+
+</form>
+
+<script>
+    var url = "@Url.Content("~/Fruta/Save")";
+
+    function jsAdd() {
+        fetch(url, {
+            method: "POST",
+            body: JSON.stringify({
+                Name: document.getElementById("Name").value,
+                Cantidad: document.getElementById("Cantidad").value,
+                Origen: document.getElementById("Origen").value,
+                Precio: document.getElementById("Precio").value,
+
+            }),
+            headers: {
+                'Accept': "application/json",
+                "Content-Type": "application/json"
+
+            }
+        }).then(function (response) {
+            if (response.ok)
+                return response.text()
+            else
+                alert("Error al ejecutar :(")
+
+        }).then(function (Data) {
+            if (Data != "1") {
+                alert(Data)
+            } else {
+                document.location.href = "@Url.Content("~/Fruta/")";
+            }
+        })
+
+    }
+
+</script>
+

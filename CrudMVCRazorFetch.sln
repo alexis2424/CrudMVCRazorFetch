@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudMVCRazorFetch", "CrudMVCRazorFetch\CrudMVCRazorFetch.csproj", "{A22CA6B4-E6D9-417A-B8D0-EA098C2C2A51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A22CA6B4-E6D9-417A-B8D0-EA098C2C2A51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A22CA6B4-E6D9-417A-B8D0-EA098C2C2A51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A22CA6B4-E6D9-417A-B8D0-EA098C2C2A51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A22CA6B4-E6D9-417A-B8D0-EA098C2C2A51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D89F4AC2-EA35-4061-AB54-AE59629CF691}
+	EndGlobalSection
+EndGlobal

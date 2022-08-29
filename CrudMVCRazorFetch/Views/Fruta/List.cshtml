@@ -1,0 +1,30 @@
+﻿@using CrudMVCRazorFetch.Models.ViewModel
+@model List<ListFrutaViewModel>
+@{
+    Layout = null;
+}
+
+
+    @foreach (var oFruta in Model)
+    {
+
+        <div class="col-md-15">
+      
+
+         
+          <ul> 
+
+          <li>Nombre: @oFruta.Name</li>
+          <li>Cantidad: @oFruta.Cantidad</li>
+          <li>Origen: @oFruta.Origen</li>
+          <li>Precio: @oFruta.Precio</li>
+          </ul>
+      
+
+          <button class="btn btn-outline-warning my-2 my-sm-2" onclick="document.location.href= '@Url.Content("~/Fruta/Edit/?Id="+oFruta.Id)'" type="submit">Editar</button>
+          <button class="btn btn-outline-danger my-2 my-sm-2" onclick="jsDelete(@oFruta.Id)" type="submit">Eliminar</button>
+
+</div>
+
+    }
+
